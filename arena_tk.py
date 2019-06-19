@@ -28,8 +28,7 @@ class ArenaTK(tk.Canvas):
         robo.arena = self
         robo._inicializa_forma()
         self.adiciona_robo(robo)
-        #print(self.robos[1])
-        print(self.robos[1].pos())
+        print('posição do robô: {}'.format(self.robos[1].pos()))
 
         
     def adiciona_robo(self,robo):

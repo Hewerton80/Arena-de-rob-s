@@ -127,6 +127,7 @@ class Poligono:
         self.pos = Ponto2D(0, 0)
         self.ang = 0.0
 
+
         if type(vertices) != tuple and type(vertices) != list:
             raise ErroGeometria('Vertices do poligono devem ser informados por tupla ou lista')
         
@@ -138,6 +139,7 @@ class Poligono:
         if pos_ini:
             if type(pos_ini) != tuple and type(pos_ini) != Ponto2D:
                 raise ErroGeometria('Posicao inicial deve ser especificada por tupla ou Ponto2D')
+            print()
             self.move(pos_ini)
 
         if ang_ini:

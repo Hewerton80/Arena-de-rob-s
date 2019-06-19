@@ -12,6 +12,8 @@ if __name__ == "__main__":
 	h=h-(h*0.1)
 	
 	arena = ArenaTK(root,'arenas/arena3.txt',w,h,p)
+	arena.focus_set()
+	arena.bind('<Key>', arena.robos[1].processa_teclado)
 	arena.pack()
 
 	# cria robôs/sensores

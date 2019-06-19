@@ -17,8 +17,7 @@ class Robo():
     ALPHA = 5 # incremento da rotação (5 graus)
     def __init__(self, nome):
         self.nome = nome
-        #self.pos = pos
-        self.forma = None
+        #self.pos = None
 
     def __repr__(self):
         """
