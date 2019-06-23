@@ -17,7 +17,6 @@ class Robo():
     ALPHA = 5 # incremento da rotação (5 graus)
     def __init__(self, nome):
         self.nome = nome
-        #self.pos = None
 
     def __repr__(self):
         """
@@ -53,15 +52,12 @@ class Robo():
         global).
         """
         pass
+    @abstractmethod
+    def colide(self, vet_des):
+        pass
 
-class RoboTipoX(Robo):
-    """
-    Implemente aqui a lógica de movimentação
-    para o tipo de robô escolhido.
-    """
-    pass
+    @abstractmethod
+    def adiciona_sensor(self):
+        pass
 
-if __name__ == '__main__':
 
-    r3 = RoboTipo3('r_tipo3', (50, 50), 90)
-    print(r3.forma)

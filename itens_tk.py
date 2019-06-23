@@ -55,26 +55,3 @@ class ItemTK(ABC):
         no canvas TK.
         """
         self.arena.itemconfig(self.item_canvas, state='normal', outline=contorno)
-
-if __name__ == '__main__':
-
-    root = tk.Tk()
-    root.title('Arena de Robos')
-    root.geometry('400x400+0+0')
-
-    # toda arena é um canvas: um canvas pode ser utilizado para exibir
-    # vários ItemTK
-    c = tk.Canvas(root, width=400, height=400, bg='gray', highlightthickness=0, borderwidth=0)
-    c.pack(expand=tk.TRUE, fill=tk.BOTH)
-    c.focus_set()
-
-    # cria sensor de proximidade
-    sensor = SensorProximidadeTK(c, 50)
-
-    # cria robô tipo3 com sensor de proximidade
-    r1 = RoboTipo3TK('r1', (50, 50), 0, 'red', c, sensor)
-
-    # controla robô r1
-    c.bind('<Key>', r1.processa_teclado)
-
-    root.mainloop()

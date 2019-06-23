@@ -22,8 +22,10 @@ class Sensor(ABC):
     tipos = ('PROXIMIDADE1', 'PROXIMIDADE2', 'ONISCIENTE')
     def __init__(self):
         self.robo = None
+        self.ligado = False
         self.robos_detec = []
         self.celulas_detec = []
+
 
     @abstractmethod
     def inicializa_sensor(self, robo):
