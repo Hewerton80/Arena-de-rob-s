@@ -7,6 +7,7 @@ na forma de um Canvas TK.
 
 import tkinter as tk
 from robo_tipo_2tk import *
+from robo_tipo_3tk import *
 from itens_tk import *
 from celula_tk import *
 
@@ -32,7 +33,7 @@ class ArenaTK(tk.Canvas):
         
     def cria_robo(self,nome,x,y,ori):
         #print(nome,x,y,ori)
-        robo = RoboTipo2TK(nome,x,y,ori)
+        robo = RoboTipo3TK(nome,x,y,ori)
         robo.arena = self
         robo._inicializa_forma()
         self.adiciona_robo(robo)
@@ -64,7 +65,6 @@ class ArenaTK(tk.Canvas):
     def processa_teclado(self,evento):
         if self.id_robo_lidado:
             self.robos[self.id_robo_lidado].processa_teclado(evento)
-
         self.mostra_info()
 
     def mostra_info(self):
@@ -76,12 +76,8 @@ class ArenaTK(tk.Canvas):
         info = 'Nome: {}             '.format(robo.nome)
         info += 'X: {:.2f}, Y: {:.2f}                '.format(pos.x,pos.y)
         info += 'Área explorada: {:.2f}%             '.format((blocos_explorados/blocos)*100)
-        info+='Robôs de detectados: {:02d}'.format(robos_detectados)
-
+        info+='Robôs detectados: {:02d}'.format(robos_detectados)
         self.info.set(info)
-
-
-
 
     def cria_arquivo(self):
         arq = open('arena.txt','w')
@@ -94,8 +90,6 @@ class ArenaTK(tk.Canvas):
                 else:
                     arq.write('1')
             arq.write('\n')
-
-
 
     def carrega_de_arquivo(self,arquivo):
         arq = open(arquivo,'r')
