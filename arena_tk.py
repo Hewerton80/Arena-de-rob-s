@@ -32,7 +32,9 @@ class ArenaTK(tk.Canvas):
         self.robos = {}
         
     def cria_robo(self,nome,x,y,ori):
-        #print(nome,x,y,ori)
+        if x.isalpha() or y.isalpha() or ori.isalpha():
+            raise ErroArena("'x', 'y' e 'ori' devem ser números")
+
         robo = RoboTipo3TK(nome,x,y,ori)
         robo.arena = self
         robo._inicializa_forma()

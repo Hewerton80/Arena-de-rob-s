@@ -19,7 +19,7 @@ class RoboTipo3TK(RoboTipo3):
 		y = float(y) if y else uniform(RoboTipo3TK.l, 410 - RoboTipo3TK.l)
 		ori = float(ori) if ori else uniform(0,360)
 		pos0 = Ponto2D(x, y)
-		pol = Poligono(RoboTipo3TK.vertices, pos0, 0.0 )
+		pol = Poligono(RoboTipo3TK.vertices, pos0, ori )
 		RoboTipo2.__init__(self,nome,pol)
 
 	def _inicializa_forma(self): 
